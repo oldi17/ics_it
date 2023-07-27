@@ -32,7 +32,7 @@ create table dbo.Basket(
     ,Quantity int NOT NULL
     ,Value money NOT NULL
     ,PurchaseDate datetime NOT NULL DEFAULT(SYSDATETIME())
-    ,DiscountValue numeric(4,3) NOT NULL
+    ,DiscountValue money NOT NULL
     ,CONSTRAINT CHK_Basket_Quantity CHECK(Quantity >= 0)
     ,CONSTRAINT CHK_Basket_Value CHECK(Value >= 0.00)
     ,CONSTRAINT FK_Basket_SKU FOREIGN KEY(ID_SKU)
