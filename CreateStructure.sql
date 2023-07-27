@@ -12,7 +12,7 @@ go
 
 create table dbo.SKU(
     ID int NOT NULL IDENTITY PRIMARY KEY
-    ,Code as 's' + cast(ID as nvarchar)
+    ,Code as 's' + cast(ID as varchar(255))
     ,Name varchar(255) NOT NULL
     ,CONSTRAINT UNQ_SKU_Code UNIQUE(Code)
 );
