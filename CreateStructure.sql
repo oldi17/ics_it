@@ -1,5 +1,13 @@
+if OBJECT_ID('dbo.Basket') IS NOT NULL
+    drop table dbo.Basket;
+go
+
 if OBJECT_ID('dbo.SKU') IS NOT NULL
     drop table dbo.SKU;
+go
+
+if OBJECT_ID('dbo.Family') IS NOT NULL
+    drop table dbo.Family;
 go
 
 create table dbo.SKU(
@@ -10,19 +18,11 @@ create table dbo.SKU(
 );
 go
 
-if OBJECT_ID('dbo.Family') IS NOT NULL
-    drop table dbo.Family;
-go
-
 create table dbo.Family(
     ID int NOT NULL IDENTITY PRIMARY KEY
     ,SurName nvarchar(40) NOT NULL
     ,BudgetValue money NOT NULL
 );
-go
-
-if OBJECT_ID('dbo.Basket') IS NOT NULL
-    drop table dbo.Basket;
 go
 
 create table dbo.Basket(
